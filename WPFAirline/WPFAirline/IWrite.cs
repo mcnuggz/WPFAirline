@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFAirline
 {
-    class IWrite
+    interface IWrite
     {
         void WriteToFile();
     }

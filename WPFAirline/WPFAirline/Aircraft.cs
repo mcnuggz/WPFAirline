@@ -8,15 +8,29 @@ namespace WPFAirline
 {
     public class Aircraft
     {
-        int PassengerCount;
-        int TravelRangeInMiles;
-        bool MaintenanceStatus;
+        public int MaxPassengerCount;
+        public int PassengerCount;
+        public int AvailableSeats;
+        public int TravelRangeInMiles;
+        public bool MaintenanceStatus;
+
         //schedule
-        public Aircraft(int passengerCount, int travelRangeInMiles, bool maintenanceStatus = true)
+        Dictionary<string, string> availableFlights = new Dictionary<string, string>()
         {
-            this.PassengerCount = passengerCount;
+            {"Los Angeles", "1:45pm" }
+        };
+        public Aircraft()
+        {
+
+        }
+        public Aircraft(int maxPassengerCount, int travelRangeInMiles, bool maintenanceStatus = true)
+        {
+            this.MaxPassengerCount = maxPassengerCount;
             this.TravelRangeInMiles = travelRangeInMiles;
         }
-
+        public static void RemoveFlight()
+        {
+            
+        }
     }
 }

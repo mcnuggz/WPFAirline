@@ -6,16 +6,23 @@ using System.Threading.Tasks;
 
 namespace WPFAirline
 {
-    class Seat
+    public class Seat
     {
-        int SeatNumber;
-        char RowLetter;
-        int Price;
-        public Seat(int seatNumber, char rowLetter, int price)
+        public int SeatNumber;
+        public string RowLetter;
+        public int Price;
+        //selling seats
+        public Seat(int seatNumber, string rowLetter, int price)
         {
             this.SeatNumber = seatNumber;
             this.RowLetter = rowLetter;
             this.Price = price;
+        }
+        //assign seat to passenger
+        public Seat(int seatNumber, string rowLetter)
+        {
+            this.SeatNumber = seatNumber;
+            this.RowLetter = rowLetter;
         }
     }
 }
