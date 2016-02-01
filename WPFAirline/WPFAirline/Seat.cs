@@ -8,21 +8,20 @@ namespace WPFAirline
 {
     public class Seat
     {
-        public Row RowLetter;
-        public int SeatNumber;
+        public string _Seat;
         public int Price;
+
         //selling seats
-        public Seat(int seatNumber, Row rowLetter, int price)
+        public Seat(string seatNumber, int price)
         {
-            this.SeatNumber = seatNumber;
-            this.RowLetter = rowLetter;
+            this._Seat = seatNumber;
             this.Price = price;
         }
         //assign seat to passenger
-        public Seat(int seatNumber, Row rowLetter)
+        public Seat(string seatNumber, bool isOccupied = true)
         {
-            this.SeatNumber = seatNumber;
-            this.RowLetter = rowLetter;
+            this._Seat = seatNumber;
         }
+    
     }
 }

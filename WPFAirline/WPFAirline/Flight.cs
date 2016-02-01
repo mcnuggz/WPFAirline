@@ -8,15 +8,15 @@ namespace WPFAirline
 {
     public class Flight : Aircraft
     {
-        Aircraft _aircraft;
+
+        Aircraft _aircraft = new Aircraft();
         public int FlightNumber;
         public string Origin;
         public string Destination;
 
-        public List<Passenger> manifest = new List<Passenger>()
+        public Dictionary<int, string> manifest = new Dictionary<int, string>()
         {
-            (new Passenger("Ryan Webb", new Seat(2, Row.A))),
-            (new Passenger("Christian Petersen", new Seat(3, Row.D)))
+            {12 , "Ryan Webb"}
         };
 
         //example flight
@@ -28,20 +28,20 @@ namespace WPFAirline
             this._aircraft = aircraft;
             this.Origin = origin;
             this.Destination = destination;
+
         }    
 
-        public void AddPassenger(string name, int seat, Row row)
+        public void AddPassenger(int seat, string name)
         {
-            manifest.Add(new Passenger(name, new Seat(seat, row)));
+
         }
 
-        public void RemovePassenger(Passenger name)
-        {
-            if (manifest.Contains(name))
-            {
-                manifest.Remove(name);                
-            }
+        public void RemovePassenger(int seat, string name)
+        {          
+
+            seatList.Add(seat);   
         }
+       
 
     }
 }
