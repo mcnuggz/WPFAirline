@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WPFAirline
 {
-    public class Class1
+    class Flight
     {
+        int flightNumber;
+        string Origin;
+        string Destination;
+        //passenger manifest
     }
 }
