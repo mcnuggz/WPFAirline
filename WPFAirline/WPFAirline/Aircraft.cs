@@ -19,15 +19,18 @@ namespace WPFAirline
         {
             {"Los Angeles", "1:45pm" }
         };
+
         public Aircraft()
         {
 
         }
+
         public Aircraft(int maxPassengerCount, int travelRangeInMiles, bool maintenanceStatus = true)
         {
             this.MaxPassengerCount = maxPassengerCount;
             this.TravelRangeInMiles = travelRangeInMiles;
         }
+
         public static void RemoveFlight()
         {
             

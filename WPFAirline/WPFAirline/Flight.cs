@@ -8,6 +8,7 @@ namespace WPFAirline
 {
     public class Flight : Aircraft
     {
+        Aircraft _aircraft;
         public int FlightNumber;
         public string Origin;
         public string Destination;
@@ -18,9 +19,13 @@ namespace WPFAirline
             (new Passenger("Christian Petersen", new Seat(3, Row.D)))
         };
 
-        public Flight(int flightNumber, string origin, string destination)
+        //example flight
+        //Flight flight1 = new Flight(7167, new Aircraft(20, 1000, true), "Milwaukee", "Chicago");
+
+        public Flight(int flightNumber, Aircraft aircraft, string origin, string destination)
         {
             this.FlightNumber = flightNumber;
+            this._aircraft = aircraft;
             this.Origin = origin;
             this.Destination = destination;
         }    
