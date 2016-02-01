@@ -8,10 +8,15 @@ namespace WPFAirline
 {
     public class Aircraft
     {
-        int passengerCount;
-        int travelRange;
-        bool maintenanceStatus;
+        int PassengerCount;
+        int TravelRangeInMiles;
+        bool MaintenanceStatus;
         //schedule
+        public Aircraft(int passengerCount, int travelRangeInMiles, bool maintenanceStatus = true)
+        {
+            this.PassengerCount = passengerCount;
+            this.TravelRangeInMiles = travelRangeInMiles;
+        }
 
     }
 }
