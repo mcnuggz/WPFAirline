@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WPFAirline
 {
-    public class Flight : Aircraft, IWrite
+    public class Flight : Aircraft, IWrite, IRead
     {
 
         Aircraft _aircraft = new Aircraft();
@@ -73,5 +73,12 @@ namespace WPFAirline
             }
         }
 
+        public void ReadFile()
+        {
+            using (StreamReader reader = new StreamReader(path))
+            {
+                reader.ReadToEnd();
+            }
+        }
     }
 }
