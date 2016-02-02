@@ -16,39 +16,38 @@ namespace WPFAirline
         public string Destination;
         string path = "@PassengerManifest.txt";
 
-        public Dictionary<int, string> manifest = new Dictionary<int, string>()
-        {
-            {12 , "Ryan Webb"}
-        };
+        public Dictionary<int, string> manifest;
 
         //example flight
         //Flight flight1 = new Flight(7167, new Aircraft(20, 1000, true), "Milwaukee", "Chicago");
+        public Flight()
+        {
 
+        }
         public Flight(int flightNumber, Aircraft aircraft, string origin, string destination)
         {
             this.FlightNumber = flightNumber;
             this._aircraft = aircraft;
             this.Origin = origin;
             this.Destination = destination;
-
+            manifest = new Dictionary<int, string>();
             for (int i = 1; i < MaxPassengerCount; i++)
             {
                 manifest.Add(i, "Unoccupied");
             }
-
         }    
 
         public void AddPassenger(int seat, string name)
         {
             manifest[seat] = name;
-            seatList.Remove(seat);
+            _aircraft.seatList.Remove(seat);
             WriteToFile();
         }
 
-        public void RemovePassenger(int seat)
+        public void RemovePassenger(int seatNum, ref int seatPrice)
         {
-            manifest[seat] = null;
-            seatList.Insert(seat, seat);
+            manifest[seatNum] = "Unoccupied";
+            _aircraft.seatList.Add(seatNum, seatPrice);
             WriteToFile();
         }
 
