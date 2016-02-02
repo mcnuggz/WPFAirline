@@ -18,7 +18,7 @@ namespace WPFAirline
             this.Price = price;
         }
         //assign seat to passenger
-        public Seat(string seatNumber, bool isOccupied = true)
+        public Seat(string seatNumber)
         {
             this._Seat = seatNumber;
         }
