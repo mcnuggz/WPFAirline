@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,19 +12,21 @@ namespace WPFAirline
     {
 
         Aircraft _aircraft = new Aircraft();
-        public int FlightNumber;
-        public string Origin;
-        public string Destination;
+        public int FlightNumber { get; set; }
+        public string Origin { get; set; }
+        public string Destination { get; set; }
         string path = "@PassengerManifest.txt";
 
         public Dictionary<int, string> manifest;
+        public List<Flight> availableFlights = new List<Flight>();
 
         //example flight
-        //Flight flight1 = new Flight(7167, new Aircraft(20, 1000, true), "Milwaukee", "Chicago");
+        //Flight flight1 = new Flight(7167, new Aircraft(20, 10000, true), "Milwaukee", "Chicago");
         public Flight()
         {
 
         }
+
         public Flight(int flightNumber, Aircraft aircraft, string origin, string destination)
         {
             this.FlightNumber = flightNumber;
@@ -49,6 +52,31 @@ namespace WPFAirline
             manifest[seatNum] = "Unoccupied";
             _aircraft.seatList.Add(seatNum, seatPrice);
             WriteToFile();
+        }
+
+        public void AddFlight(Flight flight)
+        {
+            availableFlights.Add(flight);
+        }
+
+        public void RemoveFlight(Flight flight)
+        {
+            if (seatList.Count == MaxPassengerCount)
+            {
+                availableFlights.Remove(flight);
+            }
+        }
+
+        public void Refuel(Flight flight)
+        {
+            if (_aircraft.TravelRangeInMiles == 0)
+            {
+                _aircraft.MaintenanceStatus = false;
+                RemoveFlight(flight);
+                Thread.Sleep(7000);
+                _aircraft.MaintenanceStatus = true;
+                AddFlight(flight);
+            }
         }
 
         public void WriteToFile()
@@ -80,5 +108,6 @@ namespace WPFAirline
                 reader.ReadToEnd();
             }
         }
+
     }
 }

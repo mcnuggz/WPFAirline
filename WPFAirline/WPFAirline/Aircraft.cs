@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WPFAirline
@@ -9,16 +10,16 @@ namespace WPFAirline
     public class Aircraft
     {
         Seat seat = new Seat();
-        public int MaxPassengerCount;
-        public int PassengerCount;
-        public int AvailableSeats;
-        public int TravelRangeInMiles;
-        public bool MaintenanceStatus;
+        public int MaxPassengerCount { get; set; }
+        public int PassengerCount { get; set; }
+        public int AvailableSeats { get; set; }
+        public int TravelRangeInMiles { get; set; }
+        public bool MaintenanceStatus { get; set; }
 
         public SortedList<int, int> seatList = new SortedList<int,int>();
 
         //schedule
-        List<Flight> availableFlights = new List<Flight>();
+        
 
         public Aircraft()
         {
@@ -72,18 +73,8 @@ namespace WPFAirline
             }
         }
 
-        public void AddFlight(Flight flight)
-        {
-            availableFlights.Add(flight);
-        }
 
-        public void RemoveFlight(Flight flight)
-        {
-            if (seatList.Count == MaxPassengerCount)
-            {
-                availableFlights.Remove(flight);
-            }           
-        }
+
 
     }
 }

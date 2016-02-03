@@ -8,8 +8,8 @@ namespace WPFAirline
 {
     public class Seat
     {
-        public int SeatNumber;
-        public int Price;
+        public int SeatNumber { get; set; }
+        public int Price { get; set; }
         public int Price1 = 49;
         public int Price2 = 39;
         public int Price3 = 29;
