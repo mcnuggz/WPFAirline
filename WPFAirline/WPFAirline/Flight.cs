@@ -21,9 +21,8 @@ namespace WPFAirline
         List<Flight> availableFlights = new List<Flight>();
         public void MakeAvailableFlightsList()
         {
-            
             availableFlights.Add(new Flight(1234, coolplane, "Milwaukee", "Chicago"));
-            this.comboBox.ItemsSource = availableFlights;
+            //this.comboBox.ItemsSource = availableFlights;
 
         }
         //example flight
@@ -76,14 +75,12 @@ namespace WPFAirline
 
         public void Refuel(Flight flight)
         {
-            if (_aircraft.TravelRangeInMiles == 0)
-            {
-                _aircraft.MaintenanceStatus = false;
-                RemoveFlight(flight);
-                Thread.Sleep(7000);
-                _aircraft.MaintenanceStatus = true;
-                AddFlight(flight);
-            }
+            _aircraft.MaintenanceStatus = false;
+            RemoveFlight(flight);
+            Thread.Sleep(7000);
+            _aircraft.MaintenanceStatus = true;
+            AddFlight(flight);
+            
         }
 
         public void WriteToFile()
