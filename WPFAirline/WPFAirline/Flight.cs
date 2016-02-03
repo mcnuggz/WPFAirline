@@ -18,10 +18,9 @@ namespace WPFAirline
         string path = "@PassengerManifest.txt";
 
         public Dictionary<int, string> manifest;
-        
+        List<Flight> availableFlights = new List<Flight>();
         public void MakeAvailableFlightsList()
         {
-            List<Flight> availableFlights = new List<Flight>();
             availableFlights.Add(new Flight(1234, coolplane, "Milwaukee", "Chicago"));
             this.comboBox.ItemsSource = availableFlights;
 
