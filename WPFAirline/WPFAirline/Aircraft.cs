@@ -72,6 +72,7 @@ namespace WPFAirline
                 seatList.Add(i, seat.Price3);
             }
         }
+        
 
 
 

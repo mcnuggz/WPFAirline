@@ -10,7 +10,7 @@ namespace WPFAirline
 {
     public class Flight : Aircraft, IWrite, IRead
     {
-
+        
         Aircraft _aircraft = new Aircraft();
         public int FlightNumber { get; set; }
         public string Origin { get; set; }
@@ -18,10 +18,17 @@ namespace WPFAirline
         string path = "@PassengerManifest.txt";
 
         public Dictionary<int, string> manifest;
-        public List<Flight> availableFlights = new List<Flight>();
+        
+        public void MakeAvailableFlightsList()
+        {
+            List<Flight> availableFlights = new List<Flight>();
+            availableFlights.Add(new Flight(1234, coolplane, "Milwaukee", "Chicago"));
+            this.comboBox.ItemsSource = availableFlights;
 
+        }
         //example flight
         //Flight flight1 = new Flight(7167, new Aircraft(20, 10000, true), "Milwaukee", "Chicago");
+        //Flight flight2 = new Flight(7307, bobby, "St. Louis", "Atlanta");
         public Flight()
         {
 
@@ -106,6 +113,7 @@ namespace WPFAirline
                 reader.ReadToEnd();
             }
         }
+        static Aircraft coolplane = new Aircraft(20, 4000, true);
 
     }
 }

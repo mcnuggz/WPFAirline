@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Image Source="http://thefirstretirement.com/wp-content/uploads/2014/02/Airliner.jpg" Stretch="Fill">
+
+        </Image>
+        <ComboBox ItemsSource="{Binding Path=availableFlights}" x:Name="comboBox" HorizontalAlignment="Center" Margin="0,225,0,72.8" VerticalAlignment="Center" Width="340" Height="23" SelectionChanged="comboBox_SelectionChanged"/>
+
     </Grid>
 </Window>

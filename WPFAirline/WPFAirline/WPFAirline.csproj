@@ -44,6 +44,7 @@
     <Compile Include="Flight.cs" />
     <Compile Include="IRead.cs" />
     <Compile Include="IWrite.cs" />
+    <Compile Include="ObservationSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seat.cs" />
   </ItemGroup>

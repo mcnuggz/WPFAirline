@@ -24,5 +24,11 @@ namespace WpfApplication1
         {
             InitializeComponent();
         }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+
+        }
     }
 }
