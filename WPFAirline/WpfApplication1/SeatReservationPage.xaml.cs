@@ -37,7 +37,7 @@ namespace WpfApplication1
 
             // Do something with the Input
             String input = InputNameBox.Text;
-            MyListBox.Items.Add(input); // Add Input to ListBox, need to change.
+            //MyListBox.Items.Add(input); // Add Input to ListBox, need to change.
 
             // Clear InputBox.
             InputNameBox.Text = String.Empty;

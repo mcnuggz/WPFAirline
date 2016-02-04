@@ -8,18 +8,21 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Seat Selection"
       WindowTitle="Bunaithe Airlines"
-      WindowHeight="400" WindowWidth="400">
+      WindowHeight="500" WindowWidth="500">
 
     <Grid>
+        <Image Source="http://s10.postimg.org/ccdhx5jop/Airplane.jpg" Stretch="Fill"/>
+        <Button Content="Reserve Seat" x:Name="ReserveSeat" Click="ReserveSeatButton_Click"
+                	VerticalAlignment="Bottom" Margin="50" Width="400"/>
         <Grid>
+
             <StackPanel>
                 
-                <ListBox x:Name="MyListBox"/>
-                <Button Content="Reserve Seat" x:Name="ReserveSeat" Click="ReserveSeatButton_Click"
-                	VerticalAlignment="Bottom"/>
+                <!--<ListBox x:Name="MyListBox"/>-->
+
             </StackPanel>
 
-            
+
             <Grid x:Name="InputBox" Visibility="Collapsed">
                 <Grid Background="Black" Opacity="0.5"/>
                 <Border
