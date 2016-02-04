@@ -16,19 +16,19 @@ using System.Windows.Shapes;
 namespace WpfApplication1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-        public MainWindow()
+        public MainPage()
         {
             InitializeComponent();
         }
 
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-
-
+            NavigationService nav = NavigationService.GetNavigationService(this);
+            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
