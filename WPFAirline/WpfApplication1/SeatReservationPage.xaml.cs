@@ -37,13 +37,13 @@ namespace WpfApplication1
             InputBox.Visibility = Visibility.Collapsed;
 
             // Do something with the Input
-            String input = InputNameBox.Text;
+            string input = InputNameBox.Text;
             Flight _addpassenger = new Flight();
             _addpassenger.AddPassenger(5, input);
-            //MyListBox.Items.Add(input); // Add Input to ListBox, need to change.
-
+            _addpassenger.WriteToFile();
+            MessageBox.Show("Seat Reserved");
             // Clear InputBox.
-            InputNameBox.Text = String.Empty;
+            InputNameBox.Text = string.Empty;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -52,7 +52,7 @@ namespace WpfApplication1
             InputBox.Visibility = Visibility.Collapsed;
 
             // Clear InputBox.
-            InputNameBox.Text = String.Empty;
+            InputNameBox.Text = string.Empty;
         }
     }
 }

@@ -17,8 +17,6 @@ namespace WPFAirline
         public bool MaintenanceStatus { get; set; }
 
         public SortedList<int, int> seatList = new SortedList<int,int>();
-
-        //schedule
         
 
         public Aircraft()
@@ -56,7 +54,6 @@ namespace WPFAirline
         }
         private void BusinessClass()
         {
-            seatList = new SortedList<int, int>();
             FirstClass();
             for (int i = 20; i < MaxPassengerCount + 1; i++)
             {
@@ -65,7 +62,6 @@ namespace WPFAirline
         }
         private void EconomyClass()
         {
-            seatList = new SortedList<int, int>();
             FirstClass();
             BusinessClass();
             for (int i = 100; i < MaxPassengerCount + 1; i++)
@@ -73,10 +69,6 @@ namespace WPFAirline
                 seatList.Add(i, (int)Price.Economy);
             }
         }
-        
-
-
-
 
     }
 }
