@@ -24,10 +24,10 @@ namespace WPFAirline
 
         }
 
-        public Flight(int flightNumber, string origin, string destination)
+        public Flight(int flightNumber, Aircraft aircraft, string origin, string destination)
         {
             this.FlightNumber = flightNumber;
-            //this._aircraft = aircraft;
+            this._aircraft = aircraft;
             this.Origin = origin;
             this.Destination = destination;
             manifest = new Dictionary<int, string>();
@@ -108,5 +108,6 @@ namespace WPFAirline
             return FlightNumber + ": " + Origin + " to " + Destination;
         }
 
+        
     }
 }
