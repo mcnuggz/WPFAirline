@@ -39,6 +39,7 @@ namespace WPFAirline
 
         public void AddPassenger(int seat, string name)
         {
+            manifest = new Dictionary<int, string>();
             manifest[seat] = name;
             _aircraft.seatList.Remove(seat);
             WriteToFile();
@@ -83,14 +84,14 @@ namespace WPFAirline
                     File.Create(path);
                     foreach (KeyValuePair<int,string> passenger in manifest)
                     {
-                        writer.Write(manifest);
+                        writer.Write(manifest.ToString());
                     }                    
                 }
                 else
                 {
                     foreach (KeyValuePair<int, string> passenger in manifest)
                     {
-                        writer.Write(manifest);
+                        writer.Write(manifest.ToString());
                     }
                 }
             }
@@ -103,6 +104,7 @@ namespace WPFAirline
                 reader.ReadToEnd();
             }
         }
+      
         public override string ToString()
         {
             return FlightNumber + ": " + Origin + " to " + Destination;

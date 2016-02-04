@@ -54,5 +54,10 @@ namespace WpfApplication1
             // Clear InputBox.
             InputNameBox.Text = String.Empty;
         }
+
+        private void radioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

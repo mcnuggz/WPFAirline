@@ -16,10 +16,10 @@ namespace WPFAirline
         public int TravelRangeInMiles { get; set; }
         public bool MaintenanceStatus { get; set; }
 
-        public SortedList<int, int> seatList = new SortedList<int,int>();
 
+        public SortedList<int, int> seatList = new SortedList<int, int>();
         //schedule
-        
+
 
         public Aircraft()
         {
@@ -44,7 +44,7 @@ namespace WPFAirline
                 EconomyClass();
             }
         }
-
+        
         private void FirstClass()
         {
             seatList = new SortedList<int, int>();
@@ -72,10 +72,5 @@ namespace WPFAirline
                 seatList.Add(i, seat.Price3);
             }
         }
-        
-
-
-
-
     }
 }
