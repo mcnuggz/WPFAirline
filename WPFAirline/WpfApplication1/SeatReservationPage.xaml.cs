@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFAirline;
 
 namespace WpfApplication1
 {
@@ -27,16 +28,18 @@ namespace WpfApplication1
         private void ReserveSeatButton_Click(object sender, RoutedEventArgs e)
         {
             // Reserve Seat button clicked, shows input box.
-            InputBox.Visibility = System.Windows.Visibility.Visible;
+            InputBox.Visibility = Visibility.Visible;
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             // Submit button Clicked! Hides InputBox and handle the input text.
-            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+            InputBox.Visibility = Visibility.Collapsed;
 
             // Do something with the Input
             String input = InputNameBox.Text;
+            Flight _addpassenger = new Flight();
+            _addpassenger.AddPassenger(5, input);
             //MyListBox.Items.Add(input); // Add Input to ListBox, need to change.
 
             // Clear InputBox.
@@ -46,7 +49,7 @@ namespace WpfApplication1
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             // Cancel Button Clicked! Hides InputBox until reserve seat button is clicked again.
-            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+            InputBox.Visibility = Visibility.Collapsed;
 
             // Clear InputBox.
             InputNameBox.Text = String.Empty;

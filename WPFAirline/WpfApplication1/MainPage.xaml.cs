@@ -38,6 +38,7 @@ namespace WpfApplication1
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+
         }
     }
 }

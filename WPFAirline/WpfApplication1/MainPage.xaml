@@ -12,8 +12,27 @@
 
     <Grid>
         <Image Source="http://thefirstretirement.com/wp-content/uploads/2014/02/Airliner.jpg" Stretch="Fill"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="337,341,0,0" VerticalAlignment="Top" Width="74" Click="button_Click"/>
-        <ListBox x:Name="flightList" HorizontalAlignment="Left" Height="224" Margin="34,138,0,0" VerticalAlignment="Top" Width="210"/>
-    </Grid>
+        <Grid x:Name="SelectFlight" >
+            <Grid Background="Black" Opacity=".3"/>
+            <Border
+            MinWidth="350"
+            Padding="15"
+            Background="Cornsilk" 
+            BorderBrush="Black" 
+            BorderThickness="1" 
+            CornerRadius="15,15,15,15" 
+            Margin="0,300,0,0"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+                <StackPanel>
+                    <Label x:Name="label" Content="Select Flight:" FontWeight="Bold" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="flightList" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Bottom" Width="500"/>
+                    <Button x:Name="button" Content="Button" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Bottom" MinWidth="74" Click="button_Click"/>
+                </StackPanel>
+            </Border>
+            
+        </Grid>
+
+        </Grid>
 
 </Page>
