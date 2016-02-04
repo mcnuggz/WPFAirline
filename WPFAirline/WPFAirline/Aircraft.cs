@@ -9,7 +9,7 @@ namespace WPFAirline
 {
     public class Aircraft
     {
-        Seat seat = new Seat();
+        Seat seat;
         public int MaxPassengerCount { get; set; }
         public int PassengerCount { get; set; }
         public int AvailableSeats { get; set; }
@@ -28,6 +28,7 @@ namespace WPFAirline
 
         public Aircraft(int maxPassengerCount, int travelRangeInMiles, bool maintenanceStatus)
         {
+            seat = new Seat();
             this.MaxPassengerCount = maxPassengerCount;
             this.TravelRangeInMiles = travelRangeInMiles;
             this.MaintenanceStatus = maintenanceStatus;
@@ -50,7 +51,7 @@ namespace WPFAirline
             seatList = new SortedList<int, int>();
             for (int i = 1; i < 20; i++)
             {
-                seatList.Add(i, seat.Price1);
+                seatList.Add(i, (int)Price.FirstClass);
             }
         }
         private void BusinessClass()
@@ -59,7 +60,7 @@ namespace WPFAirline
             FirstClass();
             for (int i = 20; i < MaxPassengerCount + 1; i++)
             {
-                seatList.Add(i, seat.Price2);
+                seatList.Add(i, (int)Price.Business);
             }
         }
         private void EconomyClass()
@@ -69,7 +70,7 @@ namespace WPFAirline
             BusinessClass();
             for (int i = 100; i < MaxPassengerCount + 1; i++)
             {
-                seatList.Add(i, seat.Price3);
+                seatList.Add(i, (int)Price.Economy);
             }
         }
         
