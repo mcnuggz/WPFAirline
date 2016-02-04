@@ -13,6 +13,7 @@
     <Grid>
         <Grid>
             <StackPanel>
+                
                 <ListBox x:Name="MyListBox"/>
                 <Button Content="Reserve Seat" x:Name="ReserveSeat" Click="ReserveSeatButton_Click"
                 	VerticalAlignment="Bottom"/>
