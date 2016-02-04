@@ -19,24 +19,15 @@ namespace WPFAirline
 
         public Dictionary<int, string> manifest;
         List<Flight> availableFlights = new List<Flight>();
-        public void MakeAvailableFlightsList()
-        {
-            availableFlights.Add(new Flight(1234, coolplane, "Milwaukee", "Chicago"));
-            //this.comboBox.ItemsSource = availableFlights;
-
-        }
-        //example flight
-        //Flight flight1 = new Flight(7167, new Aircraft(20, 10000, true), "Milwaukee", "Chicago");
-        //Flight flight2 = new Flight(7307, bobby, "St. Louis", "Atlanta");
         public Flight()
         {
 
         }
 
-        public Flight(int flightNumber, Aircraft aircraft, string origin, string destination)
+        public Flight(int flightNumber, string origin, string destination)
         {
             this.FlightNumber = flightNumber;
-            this._aircraft = aircraft;
+            //this._aircraft = aircraft;
             this.Origin = origin;
             this.Destination = destination;
             manifest = new Dictionary<int, string>();
@@ -112,7 +103,10 @@ namespace WPFAirline
                 reader.ReadToEnd();
             }
         }
-        static Aircraft coolplane = new Aircraft(20, 4000, true);
+        public override string ToString()
+        {
+            return FlightNumber + ": " + Origin + " to " + Destination;
+        }
 
     }
 }

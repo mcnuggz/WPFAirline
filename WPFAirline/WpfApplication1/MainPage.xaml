@@ -5,14 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplication1"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="413.221" d:DesignWidth="451.195"
       Title="Home"
       WindowTitle="Bunaithe Airlines"
-      WindowHeight="400" WindowWidth="400">
+      WindowHeight="450" WindowWidth="450">
 
     <Grid>
         <Image Source="http://thefirstretirement.com/wp-content/uploads/2014/02/Airliner.jpg" Stretch="Fill"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="205,244,0,0" VerticalAlignment="Top" Width="74" Click="button_Click"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="337,341,0,0" VerticalAlignment="Top" Width="74" Click="button_Click"/>
+        <ListBox x:Name="flightList" HorizontalAlignment="Left" Height="224" Margin="34,138,0,0" VerticalAlignment="Top" Width="210"/>
     </Grid>
 
 </Page>

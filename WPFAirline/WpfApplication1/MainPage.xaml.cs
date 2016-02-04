@@ -24,8 +24,16 @@ namespace WpfApplication1
         public MainPage()
         {
             InitializeComponent();
+            Loaded += MainPage_Loaded;
         }
-
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            flightList.Items.Add(new Flight(1234, "Milwaukee", "St. Louis").ToString());
+            flightList.Items.Add(new Flight(7501, "Milwaukee", "Boston").ToString());
+            flightList.Items.Add(new Flight(9001, "Milwaukee", "Seattle").ToString());
+            flightList.Items.Add(new Flight(8405, "Milwaukee", "Las Vegas").ToString());
+            flightList.Items.Add(new Flight(5423, "Milwaukee", "Orlando").ToString());
+        }
         private void button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
