@@ -28,8 +28,8 @@ namespace WpfApplication1
         }
         Aircraft plane1 = new Aircraft(20, 1000, true);
         private void SeatReservationPage_Loaded(object sender, RoutedEventArgs e)
-        {        
-            for (int i = 1; i < plane1.MaxPassengerCount+1; i++)
+        {
+            for (int i = 1; i < plane1.MaxPassengerCount + 1; i++)
             {
                 seatList.Items.Add(new Seat(i, Price.FirstClass));
             }
@@ -38,31 +38,20 @@ namespace WpfApplication1
         {
             // Reserve Seat button clicked, shows input box.
             InputBox.Visibility = Visibility.Visible;
-            
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             // Submit button Clicked, Hides InputBox and handle the input text.
             InputBox.Visibility = Visibility.Collapsed;
-
             // Do something with the Input
             string input = InputNameBox.Text;
             Flight _addpassenger = new Flight();
-            int value = seatList.SelectedIndex+1;
-            if (value < 1)
-            {
-                MessageBox.Show("Error: Set not selected,\nPlease select a seat.");
-            }
-            else
-            {
-                _addpassenger.AddPassenger(value, input);
-                _addpassenger.WriteToFile();
-                MessageBox.Show("Your seat is reserved!");
-                seatList.Items.RemoveAt(value - 1);
-            }
-
-
+            int value = seatList.SelectedIndex + 1;
+            _addpassenger.AddPassenger(value, input);
+            _addpassenger.WriteToFile();
+            MessageBox.Show("Your seat is reserved!");
+            seatList.Items.RemoveAt(value - 1);
             // Clear InputBox.
             InputNameBox.Text = string.Empty;
         }
