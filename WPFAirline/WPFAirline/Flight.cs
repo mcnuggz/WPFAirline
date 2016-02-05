@@ -15,6 +15,8 @@ namespace WPFAirline
         public int FlightNumber { get; set; }
         public string Origin { get; set; }
         public string Destination { get; set; }
+        public string DepartureTime { get; set; }
+        public string DepartureDate { get; set; }
         string path = @"PassengerManifest.txt";
 
         public Dictionary<int, string> manifest { get; set; }
@@ -24,11 +26,13 @@ namespace WPFAirline
 
         }
 
-        public Flight(int flightNumber, string origin, string destination)
+        public Flight(int flightNumber, string origin, string destination, string departureTime, string departureDate)
         {
             this.FlightNumber = flightNumber;
             this.Origin = origin;
             this.Destination = destination;
+            this.DepartureTime = departureTime;
+            this.DepartureDate = departureDate;
             manifest = new Dictionary<int, string>();
             for (int i = 1; i < MaxPassengerCount; i++)
             {
@@ -74,22 +78,11 @@ namespace WPFAirline
 
         public void WriteToFile()
         {
-            using (TextWriter writer = new StreamWriter(path))
+            using (StreamWriter writer = new StreamWriter(path, true))
             {
-                if (!File.Exists(path))
+                foreach (KeyValuePair<int, string> passenger in manifest)
                 {
-                    File.Create(path);
-                    foreach (KeyValuePair<int,string> passenger in manifest)
-                    {
-                        writer.Write("Seat {0}: {1}", passenger.Key, passenger.Value);
-                    }                    
-                }
-                else
-                {
-                    foreach (KeyValuePair<int, string> passenger in manifest)
-                    {
-                        writer.Write("Seat {0}: {1}", passenger.Key, passenger.Value);
-                    }
+                    writer.WriteLine("Seat {0}: {1}", passenger.Key, passenger.Value);
                 }
             }
         }
@@ -103,7 +96,7 @@ namespace WPFAirline
       
         public override string ToString()
         {
-            return FlightNumber + ": " + Origin + " to " + Destination;
+            return String.Format("{0}: {1} to {2, -45} Departs On: {3} at {4}", FlightNumber, Origin, Destination, DepartureDate, DepartureTime);
         }      
     }
 }
