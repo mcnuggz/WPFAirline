@@ -9,7 +9,7 @@ namespace WPFAirline
 {
     public class Aircraft
     {
-        Seat seat = new Seat();
+        Seat seat;
         public int MaxPassengerCount { get; set; }
         public int PassengerCount { get; set; }
         public int AvailableSeats { get; set; }
@@ -17,8 +17,10 @@ namespace WPFAirline
         public bool MaintenanceStatus { get; set; }
 
 
+
         public SortedList<int, int> seatList = new SortedList<int, int>();
         //schedule
+
 
 
         public Aircraft()
@@ -28,21 +30,22 @@ namespace WPFAirline
 
         public Aircraft(int maxPassengerCount, int travelRangeInMiles, bool maintenanceStatus)
         {
+            seat = new Seat();
             this.MaxPassengerCount = maxPassengerCount;
             this.TravelRangeInMiles = travelRangeInMiles;
             this.MaintenanceStatus = maintenanceStatus;
-            if (maxPassengerCount <= 20)
-            {
-                FirstClass();
-            }
-            else if (maxPassengerCount <= 100)
-            {
-                BusinessClass();
-            }
-            else if (maxPassengerCount >= 100)
-            {
-                EconomyClass();
-            }
+            //if (maxPassengerCount <= 20)
+            //{
+            //    FirstClass();
+            //}
+            //else if (maxPassengerCount <= 100)
+            //{
+            //    BusinessClass();
+            //}
+            //else if (maxPassengerCount >= 100)
+            //{
+            //    EconomyClass();
+            //}
         }
         
         private void FirstClass()
@@ -50,26 +53,24 @@ namespace WPFAirline
             seatList = new SortedList<int, int>();
             for (int i = 1; i < 20; i++)
             {
-                seatList.Add(i, seat.Price1);
+                seatList.Add(i, (int)Price.FirstClass);
             }
         }
         private void BusinessClass()
         {
-            seatList = new SortedList<int, int>();
             FirstClass();
             for (int i = 20; i < MaxPassengerCount + 1; i++)
             {
-                seatList.Add(i, seat.Price2);
+                seatList.Add(i, (int)Price.Business);
             }
         }
         private void EconomyClass()
         {
-            seatList = new SortedList<int, int>();
             FirstClass();
             BusinessClass();
             for (int i = 100; i < MaxPassengerCount + 1; i++)
             {
-                seatList.Add(i, seat.Price3);
+                seatList.Add(i, (int)Price.Economy);
             }
         }
     }

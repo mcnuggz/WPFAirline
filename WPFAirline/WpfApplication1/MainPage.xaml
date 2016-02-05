@@ -27,7 +27,7 @@
                 <StackPanel>
                     <Label x:Name="label" Content="Select Flight:" FontWeight="Bold" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="flightList" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Bottom" Width="500"/>
-                    <Button x:Name="button" Content="Button" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Bottom" MinWidth="74" Click="button_Click"/>
+                    <Button x:Name="button" Content="Submit" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Bottom" MinWidth="74" Click="button_Click"/>
                 </StackPanel>
             </Border>
             

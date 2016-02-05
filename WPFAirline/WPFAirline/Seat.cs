@@ -9,19 +9,16 @@ namespace WPFAirline
     public class Seat
     {
         public int SeatNumber { get; set; }
-        public int Price { get; set; }
-        public int Price1 = 49;
-        public int Price2 = 39;
-        public int Price3 = 29;
+        public Price price { get; set; }
         public Seat()
         {
 
         }
         //selling seats
-        public Seat(int seatNumber, int price)
+        public Seat(int seatNumber, Price price)
         {
             this.SeatNumber = seatNumber;
-            this.Price = price;
+            this.price = price;
         }
         //assign seat to passenger
         public Seat(int seatNumber)

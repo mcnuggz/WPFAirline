@@ -28,14 +28,11 @@ namespace WpfApplication1
         }
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Aircraft Bombardiar = new Aircraft(20, 1000, true);
-            Aircraft Boeing = new Aircraft(80, 2000, true);
-            Aircraft Airbus = new Aircraft(150, 4000, true);
-            flightList.Items.Add(new Flight(1234, Bombardiar, "Milwaukee", "St. Louis").ToString());
-            flightList.Items.Add(new Flight(7501, Boeing, "Milwaukee", "Boston").ToString());
-            flightList.Items.Add(new Flight(9001, Bombardiar, "Milwaukee", "Seattle").ToString());
-            flightList.Items.Add(new Flight(8405, Boeing, "Milwaukee", "Las Vegas").ToString());
-            flightList.Items.Add(new Flight(5423, Airbus, "Milwaukee", "Orlando").ToString());
+            //flightList.Items.Add(new Flight(1234, "Milwaukee", "St. Louis").ToString());
+            //flightList.Items.Add(new Flight(7501, "Milwaukee", "Boston").ToString());
+            //flightList.Items.Add(new Flight(9001, "Milwaukee", "Seattle").ToString());
+            //flightList.Items.Add(new Flight(8405, "Milwaukee", "Las Vegas").ToString());
+            //flightList.Items.Add(new Flight(5423, "Milwaukee", "Orlando").ToString());
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
