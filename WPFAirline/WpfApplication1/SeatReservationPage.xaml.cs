@@ -54,7 +54,8 @@ namespace WpfApplication1
             int value = seatList.SelectedIndex+1;
             _addpassenger.AddPassenger(value, input);
             _addpassenger.WriteToFile();
-            MessageBox.Show("Seat Reserved");
+            MessageBox.Show("Your seat is reserved!");
+
             // Clear InputBox.
             InputNameBox.Text = string.Empty;
         }
