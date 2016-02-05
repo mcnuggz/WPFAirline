@@ -28,9 +28,20 @@ namespace WpfApplication1
         }
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            flightList.Items.Add(new Flight(7501, "Milwaukee", "Boston").ToString());
-            flightList.Items.Add(new Flight(8405, "Milwaukee", "Las Vegas").ToString());
-            flightList.Items.Add(new Flight(5423, "Milwaukee", "Orlando").ToString());
+            Flight flight1 = new Flight(7501, "Milwaukee", "Boston");
+            Flight flight2 = new Flight(8405, "Milwaukee", "Las Vegas");
+            Flight flight3 = new Flight(5423, "Milwaukee", "Orlando");
+
+            List<Flight> availableFlights = new List<Flight>();
+            availableFlights.Add(flight1);
+            availableFlights.Add(flight2);
+            availableFlights.Add(flight3);
+
+            foreach (Flight flight in availableFlights)
+            {
+                flightList.Items.Add(flight.ToString());
+            }
+
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -40,5 +51,6 @@ namespace WpfApplication1
             nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
 
         }
+
     }
 }
