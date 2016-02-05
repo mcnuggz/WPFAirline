@@ -24,22 +24,35 @@ namespace WpfApplication1
         public SeatReservationPage()
         {
             InitializeComponent();
+            Loaded += SeatReservationPage_Loaded;
+        }
+        Aircraft plane1 = new Aircraft(20, 1000, true);
+        private void SeatReservationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+            for (int i = 1; i < plane1.MaxPassengerCount+1; i++)
+            {
+                seatList.Items.Add(new Seat(i, Price.FirstClass));
+            }
+            //seatList.Items.Add(new Seat(1, Price.Business).ToString());
         }
         private void ReserveSeatButton_Click(object sender, RoutedEventArgs e)
         {
             // Reserve Seat button clicked, shows input box.
             InputBox.Visibility = Visibility.Visible;
+            
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            // Submit button Clicked! Hides InputBox and handle the input text.
+            // Submit button Clicked, Hides InputBox and handle the input text.
             InputBox.Visibility = Visibility.Collapsed;
 
             // Do something with the Input
             string input = InputNameBox.Text;
             Flight _addpassenger = new Flight();
-            _addpassenger.AddPassenger(5, input);
+            int value = Convert.ToInt32(seatList.SelectedIndex+1);
+            _addpassenger.AddPassenger(value, input);
             _addpassenger.WriteToFile();
             MessageBox.Show("Seat Reserved");
             // Clear InputBox.
@@ -55,7 +68,7 @@ namespace WpfApplication1
             InputNameBox.Text = string.Empty;
         }
 
-        private void radioButton_Checked(object sender, RoutedEventArgs e)
+        private void seatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -25,6 +25,11 @@ namespace WPFAirline
         {
             this.SeatNumber = seatNumber;
         }
-    
+
+        public override string ToString()
+        {
+            return "Seat " + SeatNumber + " : $" + Convert.ToInt32(price);
+        }
+
     }
 }
