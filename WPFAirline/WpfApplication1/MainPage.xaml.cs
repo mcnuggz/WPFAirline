@@ -35,8 +35,8 @@ namespace WpfApplication1
         private void button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this.flightList);
-            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute);
-            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute);
+            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
             nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
 
         }

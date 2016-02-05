@@ -41,7 +41,8 @@ namespace WpfApplication1
             Flight _addpassenger = new Flight();
             _addpassenger.AddPassenger(5, input);
             _addpassenger.WriteToFile();
-            MessageBox.Show("Seat Reserved");
+            MessageBox.Show("Your seat is reserved!");
+
             // Clear InputBox.
             InputNameBox.Text = string.Empty;
         }

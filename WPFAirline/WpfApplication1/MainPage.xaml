@@ -12,6 +12,7 @@
 
     <Grid>
         <Image Source="http://thefirstretirement.com/wp-content/uploads/2014/02/Airliner.jpg" Stretch="Fill"/>
+        
         <Grid x:Name="SelectFlight" >
             <Grid Background="Black" Opacity=".3"/>
             <Border
@@ -30,7 +31,6 @@
                     <Button x:Name="button" Content="Submit" HorizontalAlignment="Right" Margin="0,5,0,0" VerticalAlignment="Bottom" MinWidth="74" Click="button_Click"/>
                 </StackPanel>
             </Border>
-            
         </Grid>
 
         </Grid>
