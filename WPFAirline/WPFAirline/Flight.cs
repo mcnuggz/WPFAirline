@@ -17,7 +17,6 @@ namespace WPFAirline
         public string Destination { get; set; }
         public string DepartureTime { get; set; }
         public string DepartureDate { get; set; }
-        string path = @"PassengerManifest.txt";
 
         public Dictionary<int, string> manifest { get; set; }
         List<Flight> availableFlights = new List<Flight>();
@@ -76,7 +75,7 @@ namespace WPFAirline
             AddFlight(flight);        
         }
 
-        public void WriteToFile()
+        public void WriteToFile(string path)
         {
             using (StreamWriter writer = new StreamWriter(path, true))
             {

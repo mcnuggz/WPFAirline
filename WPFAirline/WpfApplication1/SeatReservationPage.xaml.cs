@@ -29,6 +29,7 @@ namespace WpfApplication1
         Aircraft plane1 = new Aircraft(20, 1000, true);
         private void SeatReservationPage_Loaded(object sender, RoutedEventArgs e)
         {        
+            //read the file
             for (int i = 1; i < plane1.MaxPassengerCount+1; i++)
             {
                 seatList.Items.Add(new Seat(i, Price.FirstClass));
@@ -51,7 +52,7 @@ namespace WpfApplication1
             Flight _addpassenger = new Flight();
             int value = seatList.SelectedIndex+1;
             _addpassenger.AddPassenger(value, input);
-            _addpassenger.WriteToFile();
+            _addpassenger.WriteToFile(@"Flight7501_PassengerManifest.txt");
             MessageBox.Show("Your seat is reserved!");
             seatList.Items.RemoveAt(value-1);
 
