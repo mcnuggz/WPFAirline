@@ -51,7 +51,7 @@ namespace WpfApplication1
             // Do something with the Input
             string input = InputNameBox.Text;
             Flight _addpassenger = new Flight();
-            int value = Convert.ToInt32(seatList.SelectedIndex+1);
+            int value = seatList.SelectedIndex+1;
             _addpassenger.AddPassenger(value, input);
             _addpassenger.WriteToFile();
             MessageBox.Show("Seat Reserved");
