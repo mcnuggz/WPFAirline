@@ -24,11 +24,12 @@ namespace WPFAirline
 
         }
 
-        public Flight(int flightNumber, string origin, string destination)
+        public Flight(int flightNumber, string origin, string destination, Aircraft _aircraft)
         {
             this.FlightNumber = flightNumber;
             this.Origin = origin;
             this.Destination = destination;
+            this._aircraft = _aircraft;
             manifest = new Dictionary<int, string>();
             for (int i = 1; i < MaxPassengerCount; i++)
             {

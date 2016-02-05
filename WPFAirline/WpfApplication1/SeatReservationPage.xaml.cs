@@ -34,7 +34,6 @@ namespace WpfApplication1
             {
                 seatList.Items.Add(new Seat(i, Price.FirstClass));
             }
-            //seatList.Items.Add(new Seat(1, Price.Business).ToString());
         }
         private void ReserveSeatButton_Click(object sender, RoutedEventArgs e)
         {

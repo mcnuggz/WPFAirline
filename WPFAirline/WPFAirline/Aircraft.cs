@@ -34,18 +34,18 @@ namespace WPFAirline
             this.MaxPassengerCount = maxPassengerCount;
             this.TravelRangeInMiles = travelRangeInMiles;
             this.MaintenanceStatus = maintenanceStatus;
-            //if (maxPassengerCount <= 20)
-            //{
-            //    FirstClass();
-            //}
-            //else if (maxPassengerCount <= 100)
-            //{
-            //    BusinessClass();
-            //}
-            //else if (maxPassengerCount >= 100)
-            //{
-            //    EconomyClass();
-            //}
+            if (maxPassengerCount <= 20)
+            {
+                FirstClass();
+            }
+            else if (maxPassengerCount <= 100)
+            {
+                BusinessClass();
+            }
+            else if (maxPassengerCount >= 100)
+            {
+                EconomyClass();
+            }
         }
         
         private void FirstClass()

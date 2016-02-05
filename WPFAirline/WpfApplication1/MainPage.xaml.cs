@@ -26,11 +26,14 @@ namespace WpfApplication1
             InitializeComponent();
             Loaded += MainPage_Loaded;
         }
+        Aircraft plane1 = new Aircraft(20, 1000, true);
+        Aircraft plane2 = new Aircraft(80, 2000, true);
+        Aircraft plane3 = new Aircraft(150, 3000, true);
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            flightList.Items.Add(new Flight(7501, "Milwaukee", "Boston").ToString());
-            flightList.Items.Add(new Flight(8405, "Milwaukee", "Las Vegas").ToString());
-            flightList.Items.Add(new Flight(5423, "Milwaukee", "Orlando").ToString());
+            flightList.Items.Add(new Flight(7501, "Milwaukee", "Boston", plane1).ToString());
+            flightList.Items.Add(new Flight(8405, "Milwaukee", "Las Vegas", plane2).ToString());
+            flightList.Items.Add(new Flight(5423, "Milwaukee", "Orlando", plane3).ToString());
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {

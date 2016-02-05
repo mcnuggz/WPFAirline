@@ -13,8 +13,6 @@
 
         <Image Source="http://s18.postimg.org/vjgvubnop/Airplane.jpg" Stretch="Fill"/>
         
-
-
         <Grid x:Name="ComboBox">
             <Grid Background="Black" Opacity="0.5"/>
             <Border
@@ -34,8 +32,6 @@
                 </StackPanel>
             </Border>
         </Grid>
-
-
 
         <Grid x:Name="InputBox" Visibility="Collapsed">
             <Grid Background="Black" Opacity="0.5"/>
