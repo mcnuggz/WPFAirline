@@ -26,22 +26,49 @@ namespace WpfApplication1
             InitializeComponent();
             Loaded += MainPage_Loaded;
         }
-        Aircraft plane1 = new Aircraft(20, 1000, true);
-        Aircraft plane2 = new Aircraft(80, 2000, true);
-        Aircraft plane3 = new Aircraft(150, 3000, true);
+
+        List<Flight> availableFlights = new List<Flight>();
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            flightList.Items.Add(new Flight(7501, "Milwaukee", "Boston", plane1).ToString());
-            flightList.Items.Add(new Flight(8405, "Milwaukee", "Las Vegas", plane2).ToString());
-            flightList.Items.Add(new Flight(5423, "Milwaukee", "Orlando", plane3).ToString());
+            Flight flight1 = new Flight(7501, "Milwaukee", "Boston");
+            Flight flight2 = new Flight(8405, "Milwaukee", "Las Vegas");
+            Flight flight3 = new Flight(5423, "Milwaukee", "Orlando");
+
+            
+            availableFlights.Add(flight1);
+            availableFlights.Add(flight2);
+            availableFlights.Add(flight3);
+
+            foreach (Flight flight in availableFlights)
+            {
+                flightList.Items.Add(flight.ToString());
+            }
+
+
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            string userFlight = flightList.Text;
             NavigationService nav = NavigationService.GetNavigationService(this.flightList);
-            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
-            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
-            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
-
+            if (userFlight == availableFlights[0].ToString())
+            {
+                nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else if(userFlight == availableFlights[1].ToString())
+            {
+                nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else if (userFlight == availableFlights[2].ToString())
+            {
+                nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else
+            {
+                MessageBox.Show("Error: No flight was chosen.\nPlease select a flight.");
+            }
+            
+           
         }
+
     }
 }

@@ -15,7 +15,7 @@ namespace WPFAirline
         public int FlightNumber { get; set; }
         public string Origin { get; set; }
         public string Destination { get; set; }
-        string path = "@PassengerManifest.txt";
+        string path = @"PassengerManifest.txt";
 
         public Dictionary<int, string> manifest { get; set; }
         List<Flight> availableFlights = new List<Flight>();
@@ -24,12 +24,11 @@ namespace WPFAirline
 
         }
 
-        public Flight(int flightNumber, string origin, string destination, Aircraft _aircraft)
+        public Flight(int flightNumber, string origin, string destination)
         {
             this.FlightNumber = flightNumber;
             this.Origin = origin;
             this.Destination = destination;
-            this._aircraft = _aircraft;
             manifest = new Dictionary<int, string>();
             for (int i = 1; i < MaxPassengerCount; i++)
             {
