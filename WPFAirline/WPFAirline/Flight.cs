@@ -15,7 +15,7 @@ namespace WPFAirline
         public int FlightNumber { get; set; }
         public string Origin { get; set; }
         public string Destination { get; set; }
-        string path = "@PassengerManifest.txt";
+        string path = @"PassengerManifest.txt";
 
         public Dictionary<int, string> manifest { get; set; }
         List<Flight> availableFlights = new List<Flight>();

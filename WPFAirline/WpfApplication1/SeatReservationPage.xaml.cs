@@ -28,13 +28,11 @@ namespace WpfApplication1
         }
         Aircraft plane1 = new Aircraft(20, 1000, true);
         private void SeatReservationPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            
+        {        
             for (int i = 1; i < plane1.MaxPassengerCount+1; i++)
             {
                 seatList.Items.Add(new Seat(i, Price.FirstClass));
             }
-            //seatList.Items.Add(new Seat(1, Price.Business).ToString());
         }
         private void ReserveSeatButton_Click(object sender, RoutedEventArgs e)
         {
