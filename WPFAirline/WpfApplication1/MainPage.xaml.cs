@@ -26,13 +26,14 @@ namespace WpfApplication1
             InitializeComponent();
             Loaded += MainPage_Loaded;
         }
+        List<Flight> availableFlights = new List<Flight>();
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             Flight flight1 = new Flight(7501, "Milwaukee", "Boston");
             Flight flight2 = new Flight(8405, "Milwaukee", "Las Vegas");
             Flight flight3 = new Flight(5423, "Milwaukee", "Orlando");
 
-            List<Flight> availableFlights = new List<Flight>();
+            
             availableFlights.Add(flight1);
             availableFlights.Add(flight2);
             availableFlights.Add(flight3);
@@ -45,11 +46,22 @@ namespace WpfApplication1
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            string userFlight = flightList.Text;
             NavigationService nav = NavigationService.GetNavigationService(this.flightList);
-            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
-            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
-            nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
-
+            if (userFlight == availableFlights[0].ToString())
+            {
+                nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else if(userFlight == availableFlights[1].ToString())
+            {
+                nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else if (userFlight == availableFlights[2].ToString())
+            {
+                nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+            
+           
         }
 
     }
