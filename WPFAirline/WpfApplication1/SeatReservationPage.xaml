@@ -8,13 +8,20 @@
       d:DesignHeight="700" d:DesignWidth="800"
       Title="Seat Selection"
       WindowTitle="Bunaithe Airlines"
-      WindowHeight="700" WindowWidth="800">
+      MinWidth="700" MinHeight="800">
     <Grid>
-
-        <Image Source="http://s18.postimg.org/vjgvubnop/Airplane.jpg" Stretch="Fill"/>
-        
+        <Grid>
+            <Border
+            Margin="0,0,0,310"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+                <StackPanel>
+                    <Image Source="http://s24.postimg.org/6syeyd8ud/receptionist.jpg" VerticalAlignment="Top" Margin="120,0,0,0" Stretch="None"/>
+                </StackPanel>
+            </Border>
+        </Grid>
         <Grid x:Name="ComboBox">
-            <Grid Background="Black" Opacity="0.5"/>
+            <Grid />
             <Border
             MinWidth="350"
             Padding="20"
@@ -22,6 +29,7 @@
             BorderBrush="Black" 
             BorderThickness="1" 
             CornerRadius="15,15,15,15" 
+            Margin="0,170,0,0"
             HorizontalAlignment="Center" 
             VerticalAlignment="Center">
                 <StackPanel>

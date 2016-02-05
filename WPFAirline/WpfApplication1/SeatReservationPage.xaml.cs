@@ -50,10 +50,18 @@ namespace WpfApplication1
             string input = InputNameBox.Text;
             Flight _addpassenger = new Flight();
             int value = seatList.SelectedIndex+1;
-            _addpassenger.AddPassenger(value, input);
-            _addpassenger.WriteToFile();
-            MessageBox.Show("Your seat is reserved!");
-            seatList.Items.RemoveAt(value-1);
+            if (value < 1)
+            {
+                MessageBox.Show("Error: Set not selected,\nPlease select a seat.");
+            }
+            else
+            {
+                _addpassenger.AddPassenger(value, input);
+                _addpassenger.WriteToFile();
+                MessageBox.Show("Your seat is reserved!");
+                seatList.Items.RemoveAt(value - 1);
+            }
+
 
             // Clear InputBox.
             InputNameBox.Text = string.Empty;
