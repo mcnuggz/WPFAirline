@@ -85,12 +85,10 @@ namespace WPFAirline
                 }
             }
         }
-      
         public override string ToString()
         {
             return String.Format("{0}: {1} to {2, -45} Departs On: {3} at {4}", FlightNumber, Origin, Destination, DepartureDate, DepartureTime);
         }
-
         public void ReadFile(string path)
         {
             throw new NotImplementedException();
