@@ -17,22 +17,22 @@ using WPFAirline;
 namespace WpfApplication1
 {
     /// <summary>
-    /// Interaction logic for Page2.xaml
+    /// Interaction logic for SeatReservationPage3.xaml
     /// </summary>
-    public partial class SeatReservationPage : Page
+    public partial class SeatReservationPage3 : Page
     {
-        public SeatReservationPage()
+        public SeatReservationPage3()
         {
             InitializeComponent();
             Loaded += SeatReservationPage_Loaded;
         }
-        Aircraft plane1 = new Aircraft(20, 1000, true);
+        Aircraft plane1 = new Aircraft(150, 4000, true);
         private void SeatReservationPage_Loaded(object sender, RoutedEventArgs e)
-        {        
+        {
             //read the file
-            for (int i = 1; i < plane1.MaxPassengerCount+1; i++)
+            for (int i = 1; i < plane1.MaxPassengerCount + 1; i++)
             {
-                seatList.Items.Add(new Seat(i, Price.FirstClass));
+                seatList.Items.Add(new Seat(i, Price.Economy));
             }
         }
         private void ReserveSeatButton_Click(object sender, RoutedEventArgs e)
@@ -50,7 +50,7 @@ namespace WpfApplication1
             Flight _addpassenger = new Flight();
             int value = seatList.SelectedIndex + 1;
             _addpassenger.AddPassenger(value, input);
-            _addpassenger.WriteToFile(@"Flight7501_PassengerManifest.txt");
+            _addpassenger.WriteToFile(@"Flight5423_PassengerManifest.txt");
             MessageBox.Show("Your seat is reserved!");
             seatList.Items.RemoveAt(value - 1);
             // Clear InputBox.

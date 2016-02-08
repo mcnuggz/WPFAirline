@@ -17,7 +17,6 @@ namespace WPFAirline
         public string Destination { get; set; }
         public string DepartureTime { get; set; }
         public string DepartureDate { get; set; }
-        string path = @"PassengerManifest.txt";
 
         public Dictionary<int, string> manifest { get; set; }
         List<Flight> availableFlights = new List<Flight>();
@@ -76,7 +75,7 @@ namespace WPFAirline
             AddFlight(flight);        
         }
 
-        public void WriteToFile()
+        public void WriteToFile(string path)
         {
             using (StreamWriter writer = new StreamWriter(path, true))
             {
@@ -86,17 +85,15 @@ namespace WPFAirline
                 }
             }
         }
-        public void ReadFile()
-        {
-            using (StreamReader reader = new StreamReader(path))
-            {
-                reader.ReadToEnd();
-            }
-        }
       
         public override string ToString()
         {
             return String.Format("{0}: {1} to {2, -45} Departs On: {3} at {4}", FlightNumber, Origin, Destination, DepartureDate, DepartureTime);
-        }      
+        }
+
+        public void ReadFile(string path)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

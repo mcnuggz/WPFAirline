@@ -59,11 +59,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SeatReservationPage2.xaml.cs">
+      <DependentUpon>SeatReservationPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeatReservationPage3.xaml.cs">
+      <DependentUpon>SeatReservationPage3.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SeatReservationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeatReservationPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeatReservationPage3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

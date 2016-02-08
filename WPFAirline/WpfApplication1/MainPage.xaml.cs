@@ -56,11 +56,11 @@ namespace WpfApplication1
             }
             else if(userFlight == availableFlights[1].ToString())
             {
-                nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+                nav.Navigate(new Uri("SeatReservationPage2.xaml", UriKind.RelativeOrAbsolute));
             }
             else if (userFlight == availableFlights[2].ToString())
             {
-                nav.Navigate(new Uri("SeatReservationPage.xaml", UriKind.RelativeOrAbsolute));
+                nav.Navigate(new Uri("SeatReservationPage3.xaml", UriKind.RelativeOrAbsolute));
             }
             else
             {

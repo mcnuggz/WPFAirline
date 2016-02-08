@@ -8,6 +8,6 @@ namespace WPFAirline
 {
     interface IRead
     {
-        void ReadFile();
+        void ReadFile(string path);
     }
 }
