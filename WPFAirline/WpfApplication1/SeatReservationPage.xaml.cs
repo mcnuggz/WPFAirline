@@ -53,7 +53,7 @@ namespace WpfApplication1
             int value = seatList.SelectedIndex + 1;
             _addpassenger.AddPassenger(value, input);
             _addpassenger.WriteToFile(@"Flight7501_PassengerManifest.txt");
-            MessageBox.Show("Your seat is reserved {0}!", input);
+            MessageBox.Show("Your seat is reserved!");
             seatList.Items.RemoveAt(value-1);
             InputNameBox.Text = string.Empty;
         }
