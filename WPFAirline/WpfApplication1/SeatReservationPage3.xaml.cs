@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,33 +17,27 @@ using WPFAirline;
 namespace WpfApplication1
 {
     /// <summary>
-    /// Interaction logic for Page2.xaml
+    /// Interaction logic for SeatReservationPage3.xaml
     /// </summary>
-    public partial class SeatReservationPage : Page
+    public partial class SeatReservationPage3 : Page
     {
-        Aircraft plane1;
-        MainPage mp;
-        Flight f;
-        public SeatReservationPage()
+        public SeatReservationPage3()
         {
             InitializeComponent();
-            plane1 = new Aircraft(20, 1000, true);
-            mp = new MainPage();
-            f = new Flight();
             Loaded += SeatReservationPage_Loaded;
         }
-
-
+        Aircraft plane1 = new Aircraft(150, 4000, true);
         private void SeatReservationPage_Loaded(object sender, RoutedEventArgs e)
         {
+            //read the file
             for (int i = 1; i < plane1.MaxPassengerCount + 1; i++)
             {
-                seatList.Items.Add(new Seat(i, Price.FirstClass));
+                seatList.Items.Add(new Seat(i, Price.Economy));
             }
-                       
         }
         private void ReserveSeatButton_Click(object sender, RoutedEventArgs e)
         {
+            // Reserve Seat button clicked, shows input box.
             InputBox.Visibility = Visibility.Visible;
         }
 
@@ -57,9 +50,9 @@ namespace WpfApplication1
             Flight _addpassenger = new Flight();
             int value = seatList.SelectedIndex + 1;
             _addpassenger.AddPassenger(value, input);
-            _addpassenger.WriteToFile(@"Flight7501_PassengerManifest.txt");
-            MessageBox.Show("Your seat is reserved {0}!", input);
-            seatList.Items.RemoveAt(value-1);
+            _addpassenger.WriteToFile(@"Flight5423_PassengerManifest.txt");
+            MessageBox.Show("Your seat is reserved!");
+            seatList.Items.RemoveAt(value - 1);
             // Clear InputBox.
             InputNameBox.Text = string.Empty;
         }
@@ -73,5 +66,9 @@ namespace WpfApplication1
             InputNameBox.Text = string.Empty;
         }
 
+        private void seatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

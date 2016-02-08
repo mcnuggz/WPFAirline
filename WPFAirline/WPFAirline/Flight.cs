@@ -86,6 +86,7 @@ namespace WPFAirline
                 }
             }
         }
+
         public void ReadFile(string path)
         {
             using (StreamReader reader = new StreamReader(path))
@@ -101,6 +102,8 @@ namespace WPFAirline
         public override string ToString()
         {
             return String.Format("{0}: {1} to {2, -45} Departs On: {3} at {4}", FlightNumber, Origin, Destination, DepartureDate, DepartureTime);
-        }      
+        }
+
+
     }
 }
