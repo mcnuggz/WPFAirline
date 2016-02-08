@@ -16,9 +16,6 @@ using WPFAirline;
 
 namespace WpfApplication1
 {
-    /// <summary>
-    /// Interaction logic for SeatReservationPage3.xaml
-    /// </summary>
     public partial class SeatReservationPage3 : Page
     {
         public SeatReservationPage3()
@@ -29,7 +26,6 @@ namespace WpfApplication1
         Aircraft plane1 = new Aircraft(150, 4000, true);
         private void SeatReservationPage_Loaded(object sender, RoutedEventArgs e)
         {
-            //read the file
             for (int i = 1; i < plane1.MaxPassengerCount + 1; i++)
             {
                 seatList.Items.Add(new Seat(i, Price.Economy));
@@ -37,38 +33,26 @@ namespace WpfApplication1
         }
         private void ReserveSeatButton_Click(object sender, RoutedEventArgs e)
         {
-            // Reserve Seat button clicked, shows input box.
             InputBox.Visibility = Visibility.Visible;
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            // Submit button Clicked, Hides InputBox and handle the input text.
             InputBox.Visibility = Visibility.Collapsed;
-            // Do something with the Input
             string input = InputNameBox.Text;
             Flight _addpassenger = new Flight();
             int value = seatList.SelectedIndex + 1;
             _addpassenger.AddPassenger(value, input);
             _addpassenger.WriteToFile(@"Flight5423_PassengerManifest.txt");
-            MessageBox.Show("Your seat is reserved!");
+            MessageBox.Show("Your seat is reserved {0}!", input);
             seatList.Items.RemoveAt(value - 1);
-            // Clear InputBox.
             InputNameBox.Text = string.Empty;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            // Cancel Button Clicked! Hides InputBox until reserve seat button is clicked again.
             InputBox.Visibility = Visibility.Collapsed;
-
-            // Clear InputBox.
             InputNameBox.Text = string.Empty;
-        }
-
-        private void seatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

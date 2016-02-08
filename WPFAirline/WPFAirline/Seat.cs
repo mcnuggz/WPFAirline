@@ -14,13 +14,11 @@ namespace WPFAirline
         {
 
         }
-        //selling seats
         public Seat(int seatNumber, Price price)
         {
             this.SeatNumber = seatNumber;
             this.price = price;
         }
-        //assign seat to passenger
         public Seat(int seatNumber)
         {
             this.SeatNumber = seatNumber;
