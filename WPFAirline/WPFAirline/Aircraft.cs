@@ -17,6 +17,7 @@ namespace WPFAirline
         public bool MaintenanceStatus { get; set; }
 
         public SortedList<int, int> seatList = new SortedList<int, int>();
+        
 
         public Aircraft()
         {
@@ -29,6 +30,7 @@ namespace WPFAirline
             this.MaxPassengerCount = maxPassengerCount;
             this.TravelRangeInMiles = travelRangeInMiles;
             this.MaintenanceStatus = maintenanceStatus;
+            
             if (maxPassengerCount <= 20)
             {
                 FirstClass();

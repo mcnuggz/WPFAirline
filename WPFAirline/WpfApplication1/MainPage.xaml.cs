@@ -21,20 +21,22 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainPage : Page
     {
+        public List<Flight> availableFlights = new List<Flight>();
+        public Flight flight1;
+        public Flight flight2;
+        public Flight flight3;
+
         public MainPage()
         {
             InitializeComponent();
             Loaded += MainPage_Loaded;
         }
-
-        List<Flight> availableFlights = new List<Flight>();
+   
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Flight flight1 = new Flight(7501, "Milwaukee", "Boston", "8:15am", "2/15/16");
-            Flight flight2 = new Flight(8405, "Milwaukee", "Las Vegas", "10:40am", "3/16/2016");
-            Flight flight3 = new Flight(5423, "Milwaukee", "Orlando", "10:15pm", "3/25/2016");
-
-            
+            flight1 = new Flight(7501, "Milwaukee", "Boston", "8:15am", "2/15/16");
+            flight2 = new Flight(8405, "Milwaukee", "Las Vegas", "10:40am", "3/16/2016");
+            flight3 = new Flight(5423, "Milwaukee", "Orlando", "10:15pm", "3/25/2016"); 
             availableFlights.Add(flight1);
             availableFlights.Add(flight2);
             availableFlights.Add(flight3);

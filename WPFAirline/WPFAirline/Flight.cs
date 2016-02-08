@@ -18,7 +18,8 @@ namespace WPFAirline
         public string DepartureTime { get; set; }
         public string DepartureDate { get; set; }
 
-        public Dictionary<int, string> manifest { get; set; }
+        public SortedDictionary<int, string> manifest { get; set; }
+        List<string> list { get; set; }
         List<Flight> availableFlights = new List<Flight>();
         public Flight()
         {
@@ -32,23 +33,23 @@ namespace WPFAirline
             this.Destination = destination;
             this.DepartureTime = departureTime;
             this.DepartureDate = departureDate;
-            manifest = new Dictionary<int, string>();
+            manifest = new SortedDictionary<int, string>();
             for (int i = 1; i < MaxPassengerCount; i++)
             {
-                manifest.Add(i, "Unoccupied");
+                manifest.Add(i, null);
             }
         }    
 
         public void AddPassenger(int seat, string name)
         {
-            manifest = new Dictionary<int, string>();
+            manifest = new SortedDictionary<int, string>();
             manifest[seat] = name;
             _aircraft.seatList.Remove(seat);   
         }
 
         public void RemovePassenger(int seatNum, ref int seatPrice)
         {
-            manifest = new Dictionary<int, string>();
+            manifest = new SortedDictionary<int, string>();
             manifest[seatNum] = "Unoccupied";
             _aircraft.seatList.Add(seatNum, seatPrice);          
         }
@@ -85,12 +86,16 @@ namespace WPFAirline
                 }
             }
         }
-        public void ReadFile()
+        public void ReadFile(string path)
         {
             using (StreamReader reader = new StreamReader(path))
             {
-                reader.ReadToEnd();
-            }
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    list.Add(line);
+                }
+            }         
         }
       
         public override string ToString()

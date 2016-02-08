@@ -8,6 +8,6 @@ namespace WPFAirline
 {
     interface IWrite
     {
-        void WriteToFile();
+        void WriteToFile(string path);
     }
 }
